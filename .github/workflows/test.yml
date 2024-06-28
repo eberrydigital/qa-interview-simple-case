@@ -1,0 +1,26 @@
+name: Enforce Branch Creation Policy
+
+on:
+  create:
+    branches:
+      - '*'
+
+jobs:
+  enforce-branch-policy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          node-version: '20'
+
+      - name: Enforce branch creation policy
+        run: |
+          BRANCH_NAME=$(echo "${GITHUB_REF#refs/heads/}")
+          CREATOR=$(git log -1 --pretty=format:'%an')
+          if [[ "$CREATOR" != "davidmateodev" && "$CREATOR" != "dan-wahlin-strawberry" ]]; then
+            echo "Branch $BRANCH_NAME created by unauthorized user $CREATOR. Deleting branch."
+            git push origin --delete "$BRANCH_NAME"
+          else
+            echo "Branch $BRANCH_NAME created by authorized admin $CREATOR."
+          fi
