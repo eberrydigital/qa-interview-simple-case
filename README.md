@@ -1,4 +1,4 @@
-# 🍓 QA Interview Case
+# 🍓 QA Interview Case 
 Welcome to the Strawberry QA initial interview case! We created this repo specifically for this interview.
 Even though this is just a practical exercise, it will help us evaluate your knowledge in a similar scenario as what we currently have/use for our testing framework.
 
