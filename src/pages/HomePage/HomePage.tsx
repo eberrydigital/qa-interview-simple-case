@@ -25,7 +25,7 @@ const HomePage: React.FC<HomePageProps> = ({ user, setUser }) => {
   return (
     <main style={{ padding: '2rem', width: '100%' }}>
       <h1>Company</h1>
-      <div style={{ display: 'flex', width: '50%', marginBottom: '1rem' }}>
+      <div style={{ display: 'flex', width: '50%', marginBottom: '1rem' }} data-testid="welcome-user">
         Welcome {user.firstName} {user.lastName}
       </div>
       <Button variant="contained" onClick={handleLogout}>

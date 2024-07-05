@@ -5,8 +5,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "test:e2e": "playwright test",
-    "test:e2e:headed": "playwright test --headed"
+    "test:e2e": "cd tests; npx playwright test",
+    "test:e2e:headed": "cd tests; npx playwright test --headed"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",

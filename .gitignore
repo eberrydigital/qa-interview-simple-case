@@ -1,5 +1,5 @@
 node_modules/
-test-results/
+tests/reports/
 .DS_Store
 dist
 dist-ssr
